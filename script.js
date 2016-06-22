@@ -8,7 +8,6 @@ function updateCounters() {
   $("#completed-count").html(ncompleted);
   $("#todo-count").html(ntodos - ncompleted);
 }
-<<<<<<< HEAD
 updateCounters();
 
 
@@ -63,24 +62,12 @@ function nextTodoId() {
   return $(".todo").length + 1;
 }
 
-$("input[type=checkbox]").bind('change', toggleDone);
-$("form").bind('submit', submitTodo);
-=======
-<<<<<<< HEAD
-updateCounters();
-
-
-function toggleDone() {
-  var checkbox = this;
-
-  $(checkbox).parent().toggleClass("completed");
-
-  updateCounters();
+function cleanUpDoneTodos(event) {
+  event.preventDefault();
+  $.when($(".completed").remove())
+    .then(updateCounters);
 }
 
 $("input[type=checkbox]").bind('change', toggleDone);
-=======
-
-updateCounters();
->>>>>>> master
->>>>>>> master
+$("form").bind('submit', submitTodo);
+$("#clean-up").bind('click', cleanUpDoneTodos);
