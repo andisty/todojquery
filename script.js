@@ -8,6 +8,7 @@ function updateCounters() {
   $("#completed-count").html(ncompleted);
   $("#todo-count").html(ntodos - ncompleted);
 }
+<<<<<<< HEAD
 updateCounters();
 
 
@@ -64,3 +65,22 @@ function nextTodoId() {
 
 $("input[type=checkbox]").bind('change', toggleDone);
 $("form").bind('submit', submitTodo);
+=======
+<<<<<<< HEAD
+updateCounters();
+
+
+function toggleDone() {
+  var checkbox = this;
+
+  $(checkbox).parent().toggleClass("completed");
+
+  updateCounters();
+}
+
+$("input[type=checkbox]").bind('change', toggleDone);
+=======
+
+updateCounters();
+>>>>>>> master
+>>>>>>> master
