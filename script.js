@@ -8,8 +8,8 @@ function updateCounters() {
   $("#completed-count").html(ncompleted);
   $("#todo-count").html(ntodos - ncompleted);
 }
-
 updateCounters();
+
 
 function toggleDone() {
   var checkbox = this;
@@ -18,3 +18,5 @@ function toggleDone() {
 
   updateCounters();
 }
+
+$("input[type=checkbox]").bind('change', toggleDone);
